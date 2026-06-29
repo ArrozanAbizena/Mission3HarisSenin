@@ -1,0 +1,88 @@
+:root{
+    --font-family: "Lato", sans-serif;
+    
+    --primary-color: #3ECF4C;
+    --primary-color-400: #6BE26B;
+    --primary-color-300: #94F08B;
+    --primary-color-200: #C0FAB4;
+    --primary-color-100: #E2FCD9CC;
+
+    --secondary-color: #FFBD3A;
+    --secondary-color-400: #FFD26B;
+    --secondary-color-300: #FFDF88;
+    --secondary-color-200: #FFECB0;
+    --secondary-color-100: #FFF7D7CC;
+
+    --tertiary-color: #F64920;
+    --tertiary-color-400: #F98256;
+    --tertiary-color-300: #FCA578;
+    --tertiary-color-200: #FECAA5;
+    --tertiary-color-100: #FEE8D2CC;
+
+    --text-dark-primary: #222325;
+    --text-dark-secondary: #333333AD;
+    --text-dark-disable: #3A354161;
+
+    --text-light-primary: #FFFFFF;
+    --text-light-secondary: #C1C2C4;
+    --text-light-disable: #9D9EA1;
+
+    --primary-background: #FFFFFF;
+    --base-background: #F4F5FA;
+    --secondary-background: #F9FAFC;
+    --border-color: #3A35411F;
+
+    --info-pressed: #044AA2;
+    --info-hover: #0663C2;
+    --info-default: #0980E2;
+    --info-background: #EBF9FE;
+
+    --success-pressed: #1C9675;
+    --success-hover: #28B380;
+    --success-default: #38D189;
+    --success-background: #E0FDDF;
+
+    --warning-pressed: #B5A40D;
+    --warning-hover: #D8C613; 
+    --warning-default: #FCE91B;
+    --warning-background: #FCF8CA;
+
+    --error-pressed: #B72315;
+    --error-hover: #DB3D1F;
+    --error-default: #FF5C2B;
+    --error-background: #FCE3D1;
+    
+    --gradient-info: linear-gradient(90deg,#6F9EFF 0%,#004CE8 100%);
+    --gradient-success: linear-gradient(90deg, #73FFA6 0%,#00C247 100%);
+    --gradient-warning: linear-gradient(90deg, #FFE58036 0%, #FFE16A 100%);
+    --gradient-error: linear-gradient(90deg, #FF8A9B 0%, #FF3333 100%);
+
+    --greyscale-900: #212121;
+    --greyscale-800: #424242;
+    --greyscale-700: #616161;
+    --greyscale-600: #757575;
+    --greyscale-500: #9E9E9E;
+    --greyscale-400: #BDBDBD;
+    --greyscale-300: #E0E0E0;
+    --greyscale-200: #EEEEEE;
+    --greyscale-100: #F5F5F5;
+    --greyscale-50: #FAFAFA;
+
+    --font-family: "Lato", sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-h1: 48px;
+  --font-size-h2: 40px;
+  --font-size-h3: 32px;
+  --font-size-h4: 24px;
+  --font-size-h5: 20px;
+  --font-size-h6: 18px;
+
+  --font-size-body-lg: 18px;
+  --font-size-body-md: 16px;
+  --font-size-body-sm: 14px;
+}

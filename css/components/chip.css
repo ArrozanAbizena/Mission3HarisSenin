@@ -1,0 +1,64 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 28px;
+  padding: 0 12px;
+
+  border-radius: 999px;
+
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.chip-success {
+  --chip-main: var(--success-default);
+  --chip-bg: var(--success-background);
+}
+
+.chip-info {
+  --chip-main: var(--info-default);
+  --chip-bg: var(--info-background);
+}
+
+.chip-warning {
+  --chip-main: var(--warning-default);
+  --chip-bg: var(--warning-background);
+}
+
+.chip-error {
+  --chip-main: var(--error-default);
+  --chip-bg: var(--error-background);
+}
+
+.chip-primary {
+  --chip-main: var(--primary-color);
+  --chip-bg: var(--primary-color-100);
+}
+
+.chip-disabled {
+  --chip-main: var(--greyscale-500);
+  --chip-bg: var(--greyscale-200);
+}
+
+.chip-shadow {
+  background: var(--chip-bg);
+  color: var(--chip-main);
+}
+
+.chip-contained {
+  background: var(--chip-main);
+  color: white;
+}
+
+.chip-outline {
+  background: transparent;
+
+  border: 1px solid var(--chip-main);
+
+  color: var(--chip-main);
+}
