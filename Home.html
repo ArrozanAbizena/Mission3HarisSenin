@@ -7,32 +7,502 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="./css/output.css" rel="stylesheet">
-    <link href="./css/components/navigation.css" rel="stylesheet">
-    <link href="./css/typography.css" rel="stylesheet">
     <link href="./css/variables.css" rel="stylesheet">
-    <link href="./css/components/button.css" rel="stylesheet">
-    <link href="./css/components/card.css" rel="stylesheet">
-    <title>VideoBelajar</title>
+    <link href="./css/typography.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>VideoBelajar - Beranda</title>
+    <style>
+        :root {
+            --primary-green: #3ECF4C;
+            --primary-yellow: #FFBD3A;
+            --primary-orange: #F64920;
+            --dark-bg: #1A1F16;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
-<body>
-    <nav class="navigation navigation--login">
-        <img src="./css/logo.svg" alt="VideoBelajar" class="navigation__logo" />
-        <div class="navigation__right">
-            <a href="#" class="category">Kategori</a>
-            <img src="./profile.svg" alt="Profile" class="navigation__profile" />
+<body class="bg-[#FAF9F6] font-[Lato] text-[#222325]">
+
+    <!-- navigation -->
+    <nav class="sticky top-0 bg-white border-b border-gray-100 z-50 px-4 md:px-[120px] py-4 h-20 flex items-center justify-between">
+        <a href="./Home.html" class="flex items-center">
+            <img src="./css/logo.svg" alt="VideoBelajar Logo" class="h-10 md:h-12" />
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+            <a href="#" class="font-bold text-gray-700 hover:text-green-500 transition-colors">Kategori</a>
+            <img src="./profile.svg" alt="Profile" class="w-10 h-10 rounded-lg object-cover border border-gray-200" />
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-green-500 focus:outline-none cursor-pointer">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
     </nav>
 
-<section class="hero">
-  <div class="hero-overlay">
-    <div class="hero-content align-center style=''">
-        <img src="./Hero.jpg" alt="VideoBelajar" class="" />
-      <a href="#" class="hero-btn">
-        Temukan Video Course untuk Dipelajari!
-      </a>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-200 z-40 transition-all duration-300 shadow-md">
+        <div class="px-6 py-4 flex flex-col gap-4">
+            <a href="#" class="text-gray-700 font-bold py-2 hover:text-green-500">Kategori</a>
+            <div class="border-t border-gray-100 my-1"></div>
+            <div class="flex items-center gap-3 py-1">
+                <img src="./profile.svg" alt="Profile" class="w-10 h-10 rounded-full object-cover border border-gray-200" />
+                <div>
+                    <p class="font-bold text-sm text-[#222325]">Jenna Ortega</p>
+                    <p class="text-xs text-gray-400">jenna.ortega@gojek.com</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
 
+    <!-- Hero Section -->
+    <section class="max-w-[1200px] mx-auto my-5 px-4 md:px-0">
+        <div class="relative rounded-2xl overflow-hidden bg-cover bg-center h-[340px] md:h-[400px]" style="background-image: url('./Hero.jpg');">
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-6 md:p-12">
+                <div class="max-w-[800px] text-white flex flex-col items-center gap-4">
+                    <h1 class="text-xl md:text-4xl font-black leading-tight select-none">
+                        Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!
+                    </h1>
+                    <p class="text-xs md:text-sm text-gray-300 leading-relaxed max-w-[700px] select-none">
+                        Temukan ilmu baru yang menarik dan mendalam melalui koleksi video pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat berpartisipasi dalam latihan interaktif yang akan meningkatkan pemahaman Anda.
+                    </p>
+                    <button class="mt-2 px-6 py-3 bg-[#3ECF4C] hover:bg-[#6BE26B] text-white font-bold text-xs md:text-sm rounded-lg transition-transform hover:scale-105 active:scale-95 shadow-md cursor-pointer select-none">
+                        Temukan Video Course untuk Dipelajari!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Course Section -->
+    <main class="max-w-[1200px] mx-auto my-10 px-4 md:px-0">
+        <div class="mb-6">
+            <h2 class="text-xl md:text-2xl font-bold text-[#222325]">Koleksi Video Pembelajaran Unggulan</h2>
+            <p class="text-xs md:text-sm text-gray-500 mt-1">Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
+        </div>
+
+        <!-- Scrollable Category Tabs -->
+        <div class="flex gap-4 overflow-x-auto no-scrollbar pb-3 border-b border-gray-100 mb-8 whitespace-nowrap">
+            <button class="px-4 py-2 text-xs md:text-sm font-bold text-[#F64920] border-b-2 border-[#F64920] cursor-pointer select-none">Semua Kelas</button>
+            <button class="px-4 py-2 text-xs md:text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors cursor-pointer select-none">Pemasaran</button>
+            <button class="px-4 py-2 text-xs md:text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors cursor-pointer select-none">Desain</button>
+            <button class="px-4 py-2 text-xs md:text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors cursor-pointer select-none">Pengembangan Diri</button>
+            <button class="px-4 py-2 text-xs md:text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors cursor-pointer select-none">Bisnis</button>
+        </div>
+
+        <!-- Course Cards Grid (9 Statically Structured Cards) -->
+        <div id="course-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            
+            <!-- Card 1 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image1.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image2.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image3.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image4.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image5.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image6.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image7.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image8.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="flex flex-row md:flex-col gap-4 p-4 md:p-5 bg-white border border-gray-100 rounded-2xl items-stretch md:items-start group hover:shadow-xl transition-all duration-300 select-none">
+                <div class="w-[100px] h-[100px] md:w-full md:h-[200px] rounded-xl overflow-hidden shrink-0">
+                    <img src="./img/Image9.jpg" alt="Big 4 Auditor Financial Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-[Lato] font-bold text-sm md:text-lg text-[#222325] leading-tight line-clamp-2 md:line-clamp-none">Big 4 Auditor Financial Analyst</h3>
+                        <p class="hidden md:block text-xs md:text-sm text-gray-500 mt-2 mb-3 leading-relaxed line-clamp-2">Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum yang didesain khusus untuk meningkatkan keahlian finansial Anda secara komprehensif.</p>
+                    </div>
+                    <div class="mt-2 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <img src="./profile.svg" alt="Jenna Ortega" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-100 object-cover" />
+                            <div>
+                                <p class="font-bold text-[10px] md:text-xs text-[#222325] leading-none">Jenna Ortega</p>
+                                <p class="text-[8px] md:text-[10px] text-gray-500 mt-[2px] leading-none">Senior Accountant di Gojek</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2 flex justify-between items-center w-full mt-1">
+                            <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-550">
+                                <span class="text-orange-400 text-xs">★</span>
+                                <span class="font-medium">3.5 (86)</span>
+                            </div>
+                            <span class="text-sm md:text-lg font-black text-[#3ECF4C]">Rp 300K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Newsletter Section -->
+        <section class="rounded-2xl bg-[#1A1F16] text-white p-8 md:p-12 text-center relative overflow-hidden mb-16 shadow-lg">
+            <div class="relative z-10 max-w-[620px] mx-auto flex flex-col items-center gap-4">
+                <p class="text-yellow-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">NEWSLETTER</p>
+                <h3 class="text-xl md:text-3xl font-bold leading-tight select-none">Mau Belajar Lebih Banyak?</h3>
+                <p class="text-xs md:text-sm text-gray-300 leading-relaxed select-none">
+                    Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari program-program terbaik hariesok.id
+                </p>
+                <form class="w-full mt-4 flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Masukkan Emailmu" class="flex-1 px-4 py-3 text-xs md:text-sm text-[#222325] bg-white rounded-lg outline-none border border-transparent focus:border-green-500 shadow-inner" required />
+                    <button class="px-6 py-3 bg-[#FFBD3A] hover:bg-[#FFD26B] text-gray-900 font-bold text-xs md:text-sm rounded-lg shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <!-- Decorative circle overlay -->
+            <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+            <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-10 px-6 md:px-[120px]">
+        <!-- Desktop Footer Layout -->
+        <div class="hidden md:grid grid-cols-5 gap-8 mb-8 max-w-[1200px] mx-auto">
+            <div class="col-span-2">
+                <img src="./css/logo.svg" alt="VideoBelajar Logo" class="h-10 mb-4" />
+                <p class="font-bold text-gray-800 text-sm leading-relaxed mb-4">Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!</p>
+                <p class="text-xs text-gray-500 mb-1">Jl. Usman Effendi No. 50 Lowokwaru, Malang</p>
+                <p class="text-xs text-gray-500 font-semibold">+62-877-7123-1234</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800 text-sm mb-4">Kategori</h4>
+                <ul class="flex flex-col gap-2 text-xs text-gray-500">
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Digital & Teknologi</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Pemasaran</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Manajemen Bisnis</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Pengembangan Diri</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Desain</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800 text-sm mb-4">Perusahaan</h4>
+                <ul class="flex flex-col gap-2 text-xs text-gray-500">
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Ketentuan Layanan</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Bantuan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800 text-sm mb-4">Komunitas</h4>
+                <ul class="flex flex-col gap-2 text-xs text-gray-500">
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Tips Sukses</a></li>
+                    <li><a href="#" class="hover:text-green-500 transition-colors">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Footer Layout -->
+        <div class="md:hidden flex flex-col gap-6 mb-8 text-center items-center">
+            <img src="./css/logo.svg" alt="VideoBelajar Logo" class="h-8 mb-2" />
+            <p class="font-bold text-gray-800 text-xs leading-relaxed max-w-[280px]">Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!</p>
+            <p class="text-[10px] text-gray-400">Jl. Usman Effendi No. 50 Lowokwaru, Malang</p>
+            <p class="text-[10px] text-gray-450 font-semibold">+62-877-7123-1234</p>
+            
+            <div class="w-full border-t border-gray-150 my-2"></div>
+
+            <!-- Accordions for Mobile Links -->
+            <div class="w-full flex flex-col">
+                <details class="group border-b border-gray-150 w-full text-left">
+                    <summary class="flex justify-between items-center py-3 font-bold text-xs cursor-pointer select-none">
+                        Kategori
+                        <svg class="accordion-chevron w-4 h-4 text-gray-500 transition-transform duration-205" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <ul class="pl-2 pb-3 flex flex-col gap-2 text-xs text-gray-500">
+                        <li><a href="#">Digital & Teknologi</a></li>
+                        <li><a href="#">Pemasaran</a></li>
+                        <li><a href="#">Manajemen Bisnis</a></li>
+                        <li><a href="#">Pengembangan Diri</a></li>
+                        <li><a href="#">Desain</a></li>
+                    </ul>
+                </details>
+                <details class="group border-b border-gray-150 w-full text-left">
+                    <summary class="flex justify-between items-center py-3 font-bold text-xs cursor-pointer select-none">
+                        Perusahaan
+                        <svg class="accordion-chevron w-4 h-4 text-gray-500 transition-transform duration-205" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <ul class="pl-2 pb-3 flex flex-col gap-2 text-xs text-gray-500">
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Ketentuan Layanan</a></li>
+                        <li><a href="#">Bantuan</a></li>
+                    </ul>
+                </details>
+                <details class="group border-b border-gray-150 w-full text-left">
+                    <summary class="flex justify-between items-center py-3 font-bold text-xs cursor-pointer select-none">
+                        Komunitas
+                        <svg class="accordion-chevron w-4 h-4 text-gray-500 transition-transform duration-205" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <ul class="pl-2 pb-3 flex flex-col gap-2 text-xs text-gray-500">
+                        <li><a href="#">Tips Sukses</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row md:justify-between items-center gap-4 max-w-[1200px] mx-auto text-xs text-gray-400">
+            <p class="text-center md:text-left select-none">@2023 Gerobak Belajar. All Rights Reserved.</p>
+            <div class="flex items-center gap-4 text-gray-500 text-lg">
+                <a href="#" class="hover:text-green-500" aria-label="LinkedIn">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.87c0-.26.05-.52.13-.7a1.11 1.11 0 0 1 .97-.7c.66 0 .8.54.8 1.19v5.08h2.8M6.5 8.37a1.37 1.37 0 1 0 0-2.75 1.37 1.37 0 0 0 0 2.75M8 18.5V10.13H5V18.5h3z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-500" aria-label="Facebook">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3.6l.4-3H12V6c0-.9.2-1.2 1-1.2H15V2h-2.5C10.5 2 9 3.5 9 6v2z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-500" aria-label="Instagram">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m8.4 2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-500" aria-label="Twitter">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.2 2.4h3.3L14.3 11 22 21.6h-6.7L10 14.5l-6 7.1H.7l7.6-9.1L1 2.4h6.9l4.8 6.7 5.5-6.7zm-1.2 17.2h1.8L7.1 4.3H5.2l11.8 15.3z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive script toggles (Minimal JS for behavior) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html>

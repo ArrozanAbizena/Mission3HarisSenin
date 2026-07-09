@@ -1,48 +1,37 @@
 .hero {
-  width: 100%;
-  max-width: 1200px;
-  height: 420px;
+    height: 400px;
 
-  margin: 40px auto;
+    background-image: url("../../Hero.jpg");
+    background-size: cover;
+    background-position: center;
 
-  background-image: url("images/hero.jpg");
-  background-size: cover;
-  background-position: center;
-
-  border-radius: 16px;
-  overflow: hidden;
-
-  position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
+    width: 100%;
+    height: 100%;
 
-  background: rgba(0, 0, 0, 0.55);
+    background: rgba(0,0,0,.8);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
-  max-width: 800px;
-  color: white;
-}
+  width: 100%;
+  max-width: 920px;
 
-.hero-content h1 {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.hero-content p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 32px;
+  gap: var(--space-6);
+
+  padding:
+    var(--space-20)
+    var(--space-35)
+    var(--space-16);
 }

@@ -7,265 +7,174 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="./css/output.css" rel="stylesheet">
-    <link href="./css/components/navigation.css" rel="stylesheet">
     <link href="./css/typography.css" rel="stylesheet">
     <link href="./css/variables.css" rel="stylesheet">
-    <link href="./css/components/button.css" rel="stylesheet">
-    <link href="./css/components/card.css" rel="stylesheet">
-    <title>VideoBelajar</title>
-    <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>VideoBelajar - Daftar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+        :root {
+            --primary-green: #3ECF4C;
+            --secondary-bg: #FAF9F6;
+        }
+    </style>
 </head>
-<body>
-    <nav class="navigation navigation--login navigation--profile">
-        <img src="./css/logo.svg" alt="VideoBelajar" class="navigation__logo" />
+<body class="bg-[#FAF9F6] font-[Lato] text-[#222325]">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white border-b border-gray-100 z-50 px-4 md:px-[120px] py-4 h-20 flex items-center justify-between">
+        <a href="./Home.html" class="flex items-center">
+            <img src="./css/logo.svg" alt="VideoBelajar Logo" class="h-10 md:h-12" />
+        </a>
     </nav>
 
-    <main class="LoginPage" style="display:flex;justify-content:center;align-items:center;min-height:calc(100vh - 80px);background:var(--secondary-color-100);">
-      <section
-        style="
-        width:590px;
-        padding:36px;
-        background:#FFFFFF;
-        border:1px solid #F1F1F1;
-        border-radius:4px;"
-      >               
-    <h1 class="h3" style="text-align:center; margin-bottom:8px;"> Masuk ke Akun </h1>
-    <p style="text-align:center; color:#6B7280;margin-bottom:36px;">
-      Yuk, lanjutin belajarmu di videobelajar.
-    </p>
-    <form>
-    <label>Nama Lengkap <span style="color: var(--error-default)">*</span>
-    <input
-      type="text"
-      placeholder="Masukkan nama lengkap"
-      style="
-        width:100%;
-        padding:12px;
-        border:1px solid #D1D5DB;
-        border-radius:6px;
-        margin-top:8px;
-        margin-bottom:16px;
-        box-sizing:border-box;"
-    >
-  </label>
-    <label>E-Mail <span style="color: var(--error-default)">*</span>
-    <input
-      type="email"
-      placeholder="Masukkan email"
-      style="
-        width:100%;
-        padding:12px;
-        border:1px solid #D1D5DB;
-        border-radius:6px;
-        margin-top:8px;
-        margin-bottom:16px;
-        box-sizing:border-box;"
-    >
-  </label>
-  <label>Jenis Kelamin <span style="color: var(--error-default)">*</span>
-  <select id="gender" name="gender" style="
-        width:100%;
-        padding:12px;
-        border:1px solid #D1D5DB;
-        border-radius:6px;
-        margin-top:8px;
-        margin-bottom:16px;
-        box-sizing:border-box;"
-  >
-  <option value="">Pilih Jenis Kelamin</option>
-  <option value="laki-laki">Laki-laki</option>
-  <option value="perempuan">Wanita</option>
-</select>
-  </label>
+    <!-- Main Content Grid -->
+    <main class="min-h-[calc(100vh-80px)] bg-[#FAF9F6] flex justify-center items-center py-10 px-4">
+        
+        <!-- Registration Card -->
+        <section class="w-full max-w-[590px] bg-white border border-gray-100 rounded-2xl p-6 md:p-9 shadow-md flex flex-col gap-6">
+            
+            <!-- Card Header -->
+            <div class="text-center">
+                <h1 class="text-2xl font-black text-[#222325] leading-tight">Pendaftaran Akun</h1>
+                <p class="text-xs md:text-sm text-gray-500 mt-1 leading-relaxed">Yuk, daftarkan akunmu sekarang juga!</p>
+            </div>
 
-<div style="flex:0 0 190px; position:relative;">
-  <select
-    id="countryCode"
-    style="
-      width:100%;
-      height:56px;
-      padding:0 40px 0 60px;
-      border:1px solid #D1D5DB;
-      border-radius:8px;
-      appearance:none;
-      -webkit-appearance:none;
-      background:#fff;
-      font-size:16px;
-      cursor:pointer;
-    "
-  >
-    <option value="+62">+62</option>
-    <option value="+60">+60</option>
-    <option value="+65">+65</option>
-  </select>
+            <!-- Form -->
+            <form class="flex flex-col gap-4">
+                
+                <!-- Nama Lengkap -->
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs font-bold text-[#222325]">Nama Lengkap <span class="text-red-500">*</span></label>
+                    <input type="text" placeholder="Masukkan nama lengkap" class="w-full px-4 py-3 text-xs md:text-sm border border-gray-300 rounded-lg outline-none focus:border-green-500 transition-colors" required />
+                </div>
 
-  <!-- Bendera -->
-  <span
-    style="
-      position:absolute;
-      left:16px;
-      top:50%;
-      transform:translateY(-50%);
-      font-size:22px;
-      pointer-events:none;
-    "
-  >
-    🇮🇩
-  </span>
+                <!-- E-Mail -->
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs font-bold text-[#222325]">E-Mail <span class="text-red-500">*</span></label>
+                    <input type="email" placeholder="Masukkan email" class="w-full px-4 py-3 text-xs md:text-sm border border-gray-300 rounded-lg outline-none focus:border-green-500 transition-colors" required />
+                </div>
 
-  <!-- Icon panah -->
-  <span
-    class="material-symbols-outlined"
-    style="
-      position:absolute;
-      right:16px;
-      top:50%;
-      transform:translateY(-50%);
-      color:#666;
-      pointer-events:none;
-    "
-  >
-    expand_more
-  </span>
-</div>
+                <!-- Jenis Kelamin (Mobile Only Dropdown) -->
+                <div class="flex flex-col gap-1 md:hidden">
+                    <label class="text-xs font-bold text-[#222325]">Jenis Kelamin <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select id="gender" name="gender" class="w-full px-4 py-3 text-xs md:text-sm border border-gray-300 rounded-lg bg-white outline-none appearance-none cursor-pointer">
+                            <option value="Wanita" selected>Wanita</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <span class="material-symbols-outlined text-xl">expand_more</span>
+                        </div>
+                    </div>
+                </div>
 
-   <label>Kata Sandi <span style="color: var(--error-default)">*</span></label>
-   <div style="position:relative;margin-top:8px;margin-bottom:16px;">
-     <input
-       id="password"
-       type="password"
-       placeholder="Masukkan kata sandi"
-       style="
-         width:100%;
-         padding:12px;
-         border:1px solid #D1D5DB;
-         border-radius:6px;
-         box-sizing:border-box;"
-     >
-     <button
-       type="button"
-       class="btn"
-       id="togglePassword"
-       aria-label="Lihat kata sandi"
-       style="
-         position:absolute;
-         right:10px;
-         top:50%;
-         transform:translateY(-50%);
-         width:36px;
-         height:36px;
-         border-radius:999px;
-         background:#F5F5F5;
-         border:1px solid #D1D5DB;
-         cursor:pointer;"
-     >
-       <span
-  id="togglePasswordIcon"
-  class="material-symbols-outlined"
->
-visibility_off
-</span>
-     </button>
-   </div>
+                <!-- No. Hp -->
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs font-bold text-[#222325]">No. Hp <span class="text-red-500">*</span></label>
+                    <div class="flex gap-3">
+                        <!-- Country code selector (Indonesia flag and code) -->
+                        <div class="relative w-[110px] shrink-0">
+                            <select id="countryCode" class="w-full py-3 pl-10 pr-6 border border-gray-300 rounded-lg bg-white text-xs md:text-sm outline-none appearance-none cursor-pointer">
+                                <option value="+62">+62</option>
+                                <option value="+60">+60</option>
+                                <option value="+65">+65</option>
+                            </select>
+                            <!-- Flag icon overlay -->
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-lg pointer-events-none">🇮🇩</span>
+                            <!-- Chevron overlay -->
+                            <span class="material-symbols-outlined text-lg text-gray-500 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+                        </div>
 
-   <label>Konfirmasi Kata Sandi <span style="color: var(--error-default)">*</span></label>
-   <div style="position:relative;margin-top:8px;margin-bottom:16px;">
-     <input
-       id="confirmPassword"
-       type="password"
-       placeholder="Konfirmasi kata sandi"
-       style="
-         width:100%;
-         padding:12px;
-         border:1px solid #D1D5DB;
-         border-radius:6px;
-         box-sizing:border-box;"
-     >
-     <button
-       type="button"
-       class="btn"
-       id="toggleConfirmPassword"
-       aria-label="Lihat konfirmasi kata sandi"
-       style="
-         position:absolute;
-         right:10px;
-         top:50%;
-         transform:translateY(-50%);
-         width:36px;
-         height:36px;
-         border-radius:999px;
-         background:#F5F5F5;
-         border:1px solid #D1D5DB;
-         cursor:pointer;"
-     >
-             <span id="toggleConfirmPasswordIcon" class="material-symbols-outlined"> visibility_off </span>
-     </button>
-   </div>
-  </form>
-  <button class="btn btn-primary btn-contained"
-    style="
-      width:100%;
-      height:42px;
-      margin-bottom:12px;"
-  >
-    Daftar
-  </button>
-  <a href="./index.html" style="text-decoration:none;">
-  <button class="btn btn-secondary btn-shadow"
-    style="
-      width:100%;
-      height:42px;
-      margin-bottom:24px;"
-  >
-    Masuk
-  </button>
-  </a>
-  <button class="btn-google">
-  <img src="./logoGoogle.svg" alt="Google" style="width:20px;height:20px;margin-right:8px;">
+                        <!-- Main phone input -->
+                        <input type="tel" placeholder="8123456789" class="flex-1 px-4 py-3 text-xs md:text-sm border border-gray-300 rounded-lg outline-none focus:border-green-500 transition-colors" required />
+                    </div>
+                </div>
 
-  <span>Masuk dengan Google</span>
-</button>
+                <!-- Kata Sandi -->
+                <div class="flex flex-col gap-1 relative">
+                    <label class="text-xs font-bold text-[#222325]">Kata Sandi <span class="text-red-500">*</span></label>
+                    <div class="relative w-full">
+                        <input id="password" type="password" placeholder="Masukkan kata sandi" class="w-full pl-4 pr-12 py-3 text-xs md:text-sm border border-gray-300 rounded-lg outline-none focus:border-green-500 transition-colors" required />
+                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-400 hover:text-gray-600 focus:outline-none">
+                            <span id="togglePasswordIcon" class="material-symbols-outlined text-xl select-none">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
 
-<script>
-  (function () {
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
-    const togglePasswordBtn = document.getElementById('togglePassword');
-    const toggleConfirmPasswordBtn = document.getElementById('toggleConfirmPassword');
+                <!-- Konfirmasi Kata Sandi -->
+                <div class="flex flex-col gap-1 relative">
+                    <label class="text-xs font-bold text-[#222325]">Konfirmasi Kata Sandi <span class="text-red-500">*</span></label>
+                    <div class="relative w-full">
+                        <input id="confirmPassword" type="password" placeholder="Konfirmasi kata sandi" class="w-full pl-4 pr-12 py-3 text-xs md:text-sm border border-gray-300 rounded-lg outline-none focus:border-green-500 transition-colors" required />
+                        <button type="button" id="toggleConfirmPassword" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-400 hover:text-gray-600 focus:outline-none">
+                            <span id="toggleConfirmPasswordIcon" class="material-symbols-outlined text-xl select-none">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
 
-    const bindToggle = (inputEl, buttonEl, iconEl) => {
-      const state = { shown: false };
+                <!-- Lupa Password Link -->
+                <div class="text-right">
+                    <a href="#" class="text-xs font-medium text-green-500 hover:text-green-600 hover:underline">Lupa Password?</a>
+                </div>
 
-      const setShown = (shown) => {
-        state.shown = shown;
-        inputEl.type = shown ? 'text' : 'password';
-        if (iconEl) {
-    iconEl.textContent = shown
-        ? 'visibility_off'
-        : 'visibility';
-}
-      };
+                <!-- Action Buttons -->
+                <div class="flex flex-col gap-3 mt-2">
+                    <button type="submit" class="w-full py-3 bg-[#3ECF4C] hover:bg-[#6BE26B] text-white font-bold text-xs md:text-sm rounded-lg transition-transform hover:scale-[1.01] active:scale-95 shadow-md cursor-pointer select-none">
+                        Daftar
+                    </button>
+                    <a href="./index.html" class="w-full py-3 bg-[#E3F9E5] hover:bg-[#D5F5D7] text-[#3ECF4C] border border-[#3ECF4C] font-bold text-xs md:text-sm rounded-lg transition-transform hover:scale-[1.01] active:scale-95 cursor-pointer select-none text-center block">
+                        Masuk
+                    </a>
 
-      buttonEl.addEventListener('click', () => {
-        setShown(!state.shown);
-      });
+                    
+                    <div class="flex items-center my-2">
+                        <div class="flex-1 border-t border-gray-200"></div>
+                        <span class="px-3 text-xs text-gray-400 font-semibold select-none">atau</span>
+                        <div class="flex-1 border-t border-gray-200"></div>
+                    </div>
 
-      // default: hidden (password)
-      setShown(false);
-    };
-
-    const togglePasswordIcon = document.getElementById('togglePasswordIcon');
-    const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPasswordIcon');
-
-    if (passwordInput && togglePasswordBtn) bindToggle(passwordInput, togglePasswordBtn, togglePasswordIcon);
-    if (confirmPasswordInput && toggleConfirmPasswordBtn) bindToggle(confirmPasswordInput, toggleConfirmPasswordBtn, toggleConfirmPasswordIcon);
-  })();
-</script>
-</section>  
+                    <button type="button" class="w-full py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-95 cursor-pointer shadow-sm select-none">
+                        <img src="./logoGoogle.svg" alt="Google" class="w-5 h-5">
+                        <span class="text-xs md:text-sm font-semibold text-gray-600">Daftar dengan Google</span>
+                    </button>
+                </div>
+            </form>
+        </section>
     </main>
+
+    <!-- Password visibility toggler script -->
+    <script>
+        (function () {
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const togglePasswordBtn = document.getElementById('togglePassword');
+            const toggleConfirmPasswordBtn = document.getElementById('toggleConfirmPassword');
+            const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+            const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPasswordIcon');
+
+            const bindToggle = (inputEl, buttonEl, iconEl) => {
+                const state = { shown: false };
+
+                const setShown = (shown) => {
+                    state.shown = shown;
+                    inputEl.type = shown ? 'text' : 'password';
+                    if (iconEl) {
+                        iconEl.textContent = shown ? 'visibility' : 'visibility_off';
+                    }
+                };
+
+                buttonEl.addEventListener('click', () => {
+                    setShown(!state.shown);
+                });
+
+                // Default hidden
+                setShown(false);
+            };
+
+            if (passwordInput && togglePasswordBtn) bindToggle(passwordInput, togglePasswordBtn, togglePasswordIcon);
+            if (confirmPasswordInput && toggleConfirmPasswordBtn) bindToggle(confirmPasswordInput, toggleConfirmPasswordBtn, toggleConfirmPasswordIcon);
+        })();
+    </script>
 </body>
 </html>
-
